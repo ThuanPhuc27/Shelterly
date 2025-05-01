@@ -1,52 +1,87 @@
 import React from 'react';
-import { FaFacebook, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa';
-import Logo from '../assets/logo.png';  // Đảm bảo bạn có logo trong thư mục assets
+import { FaFacebook, FaLinkedin, FaTwitter, FaYoutube, FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaClock } from 'react-icons/fa';
+import Logo from '../assets/logo.png';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Logo và thông tin liên hệ */}
-          <div className="space-y-6">
-            <img src={Logo} alt="Logo" className="h-14" />
-            <h3 className="text-2xl font-semibold">Contact Us</h3>
-            <p className="text-sm text-gray-400">Phone: 123-456-7890</p>
-            <p className="text-sm text-gray-400">Email: contact@yourdomain.com</p>
+    <footer className="bg-[#208486] text-white w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
+          {/* Column 1 - Branding */}
+          <div className="md:col-span-4 flex flex-col items-center md:items-start">
+            <div className="flex items-center space-x-4 mb-4">
+              <img 
+                src={Logo} 
+                alt="Shelterly Logo" 
+                className="h-14 w-14 object-contain rounded-lg shadow-md"
+                loading="lazy"
+              />
+              <div>
+                <h2 className="text-xl font-bold tracking-tight">SHELTERLY</h2>
+                <p className="text-sm text-white/80 italic">PROTECTION FOR YOUR BACKPACK</p>
+              </div>
+            </div>
+            <p className="text-white/80 text-sm text-center md:text-left">
+              We provide high-quality backpack protection solutions with the most advanced technology.
+            </p>
           </div>
 
-          {/* Liên kết */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold">Quick Links</h3>
-            <ul className="text-sm space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-green-500 transition-colors">Home</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-green-500 transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-green-500 transition-colors">Services</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-green-500 transition-colors">Contact</a></li>
+          {/* Column 2 - Contact Information */}
+          <div className="md:col-span-4">
+            <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-white/20">Contact Us</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start space-x-3">
+                <FaMapMarkerAlt className="mt-1 flex-shrink-0 text-white/80" />
+                <span className="text-sm text-white/80">279 Nguyen Tri Phuong, Ward 8, District 10, HCMC</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <FaEnvelope className="text-white/80" />
+                <span className="text-sm text-white/80">ecommercest3@gmail.com</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <FaPhoneAlt className="text-white/80" />
+                <span className="text-sm text-white/80">0855 111 237</span>
+              </li>
+              <li className="flex items-center space-x-3">
+                <FaClock className="text-white/80" />
+                <span className="text-sm text-white/80">08:00 – 22:00 (Monday – Friday)</span>
+              </li>
             </ul>
           </div>
 
-          {/* Mạng xã hội */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold">Follow Us</h3>
-            <div className="flex gap-6 justify-start">
-              <a href="#" className="text-white p-4 rounded-full bg-blue-600 hover:bg-blue-700 transition duration-300 ease-in-out">
-                <FaFacebook size={24} />
-              </a>
-              <a href="#" className="text-white p-4 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-300 ease-in-out">
-                <FaTwitter size={24} />
-              </a>
-              <a href="#" className="text-white p-4 rounded-full bg-blue-800 hover:bg-blue-900 transition duration-300 ease-in-out">
-                <FaLinkedin size={24} />
-              </a>
-              <a href="#" className="text-white p-4 rounded-full bg-red-600 hover:bg-red-700 transition duration-300 ease-in-out">
-                <FaYoutube size={24} />
-              </a>
+          {/* Column 3 - Social Media */}
+          <div className="md:col-span-4">
+            <h3 className="text-lg font-semibold mb-4 pb-2 border-b border-white/20">Connect With Us</h3>
+            <div className="flex space-x-4 mb-6">
+              {[
+                { icon: FaFacebook, name: "Facebook", link: "https://www.facebook.com/profile.php?id=61575510338154"},
+                { icon: FaTwitter, name: "Twitter", link: "https://www.facebook.com/profile.php?id=61575510338154" },
+                { icon: FaLinkedin, name: "LinkedIn", link: "https://www.facebook.com/profile.php?id=61575510338154" },
+                { icon: FaYoutube, name: "YouTube", link: "https://www.facebook.com/profile.php?id=61575510338154" }
+              ].map((social, index) => (
+                <a 
+                  key={index}
+                  href={social.link}
+                  className="h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300"
+                  aria-label={`Follow us on ${social.name}`}
+                >
+                  <social.icon className="text-lg" />
+                </a>
+              ))}
             </div>
+            
+            <h4 className="text-sm font-medium mb-2">Customer Support</h4>
+            <p className="text-white/80 text-sm">
+              Our team is available to assist you with any questions about our products and services.
+            </p>
           </div>
         </div>
-        <div className="mt-12 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.</p>
+
+        {/* Bottom copyright */}
+        <div className="mt-12 pt-6 border-t border-white/20 text-center text-sm text-white/70">
+          <p>&copy; {currentYear} SHELTERLY. All rights reserved.</p>
         </div>
       </div>
     </footer>

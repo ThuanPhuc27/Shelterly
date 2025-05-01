@@ -1,12 +1,11 @@
 import Navbar from "./Navbar";
 import HeroSection from "./HeroSection";
 import Companies from "./Companies";
-import Courses from "./Courses";
 import Achievement from "./Achievement";
 import Categories from "./Categories";
 import FeedBack from "./FeedBack";
-import CTA from "./CTA";
 import Footer from "./Footer";
 import Backpacks from "./Backpacks";
+import Contact from "./Contact";
 
-export { Navbar,HeroSection,Companies,Courses,Achievement,Categories,FeedBack,CTA,Footer,Backpacks }
+export { Navbar,HeroSection,Companies,Achievement,Categories,FeedBack,Footer,Backpacks, Contact }

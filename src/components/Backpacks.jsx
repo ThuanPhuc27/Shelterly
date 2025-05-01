@@ -1,74 +1,104 @@
-import React from 'react'
-import BackpackCard from './BackpackCard'
-import { backpacks } from '../data/backpacks'
-import Slider from 'react-slick'
+import React from 'react';
+import { motion } from 'framer-motion';
+import BackpackCard from './BackpackCard';
+import { backpacks } from '../data/backpacks';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Backpacks = () => {
-  var settings = {
+  const settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    arrows: true,
     responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: false,
-          dots: true,
-        },
+          arrows: false
+        }
       },
       {
-        breakpoint: 600,
+        breakpoint: 640,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: false,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 400,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: false,
-          dots: true,
-        },
-      },
-    ],
-  }
+          arrows: false,
+          dots: false
+        }
+      }
+    ]
+  };
 
   return (
-    <section className='w-full bg-[#f9f9f9] py-16 px-4'>
-      <div className='md:max-w-[1100px] mx-auto text-center'>
-        <h1 className='text-3xl font-extrabold text-[#208486]'>
-          Popular <span className='text-[#20B486]'>Backpacks</span>
-        </h1>
-        <p className='text-[#6D737A] py-3 text-lg'>
-          Explore our premium collection of backpack covers, designed to keep your gear dry and stylish in any weather.
-        </p>
-      </div>
+    <section className='w-full bg-gradient-to-b from-[#f9f9f9] to-white py-20 px-4 md:px-8' id="products">
+      <motion.div 
+        className='max-w-7xl mx-auto'
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        {/* Header */}
+        <div className='text-center mb-12'>
+          <motion.h1 
+            className='text-4xl md:text-5xl font-bold text-[#208486] mb-4'
+            initial={{ y: -20 }}
+            whileInView={{ y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            Popular <span className='text-[#20B486]'>Backpacks</span>
+          </motion.h1>
+          <motion.p 
+            className='text-lg text-gray-600 max-w-2xl mx-auto'
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            Explore our premium collection of backpack covers, designed to keep your gear dry and stylish in any weather.
+          </motion.p>
+        </div>
 
-      <div className='md:max-w-[1100px] mx-auto gap-5'>
-        <Slider {...settings} className='px-5'>
-          {backpacks &&
-            backpacks.map((backpack) => (
-              <BackpackCard
-                key={backpack.id}
-                title={backpack.title}
-                category={backpack.category}
-                rating={backpack.rating}
-                price={backpack.price}
-                linkImg={backpack.linkImg}
-              />
+        {/* Carousel */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <Slider {...settings} className='px-2'>
+            {backpacks.map((backpack) => (
+              <div key={backpack.id} className='px-3 py-4'>
+                <BackpackCard
+                  title={backpack.title}
+                  category={backpack.category}
+                  rating={backpack.rating}
+                  price={backpack.price}
+                  linkImg={backpack.linkImg}
+                  colors={backpack.colors}
+                  isNew={backpack.isNew}
+                />
+              </div>
             ))}
-        </Slider>
-      </div>
+          </Slider>
+        </motion.div>
+      </motion.div>
     </section>
-  )
-}
+  );
+};
 
-export default Backpacks
+export default Backpacks;
