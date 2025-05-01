@@ -1,53 +1,69 @@
-# Tailwind React Landing Page
+# 🌧️ SHELTERLY - Bảo vệ balo khỏi mưa gió
 
-This repository contains a responsive landing page template built using React, Tailwind CSS, and Vite. The landing page is designed for an educational site, showcasing its features and services.
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Vite](https://img.shields.io/badge/vite-%5E4.4.5-brightgreen)](https://vitejs.dev/) [![React](https://img.shields.io/badge/react-%5E18.2-blue)](https://reactjs.org/) [![Tailwind CSS](https://img.shields.io/badge/tailwindcss-%5E3.3-blue)](https://tailwindcss.com/)
 
-## Features
+SHELTERLY là giải pháp bảo vệ balo khỏi thời tiết mưa gió với thiết kế thông minh, chất liệu cao cấp và kiểu dáng thời trang.
 
-- **Responsive Design:** Ensures compatibility across various devices and screen sizes.
-- **Sleek UI:** A modern and intuitive user interface to highlight educational offerings.
-- **Vite for Efficient Development:** Utilizes Vite for a rapid development experience.
+## ✨ Tính năng nổi bật
 
-## Installation
+- 🛡️ Bảo vệ 100% khỏi nước mưa
+- 🎒 Phù hợp với mọi loại balo từ 20-40L
+- 🌈 Nhiều màu sắc thời trang
+- 🏷️ Nhãn dán phản quang an toàn
+- 🧳 Túi đựng gọn nhẹ đi kèm
 
-1. Clone this repository:
+## 🛠 Công nghệ sử dụng
 
-   ```bash
-   git clone https://github.com/ThuanPhuc27/Shelterly.git
-   ```
+| Công nghệ | Mục đích |
+|-----------|----------|
+| React | Xây dựng giao diện người dùng |
+| Vite | Công cụ build frontend hiệu suất cao |
+| Tailwind CSS | Thiết kế giao diện với utility-first CSS |
+| Framer Motion | Tạo hiệu ứng chuyển động mượt mà |
+| React Icons | Thư viện icon đa dạng |
 
-2. Navigate into the project directory:
+## 🚀 Cách cài đặt
 
-   ```bash
-   cd Shelterly
-   ```
+### Yêu cầu hệ thống
+- Node.js phiên bản 16 trở lên
+- npm phiên bản 8 trở lên
 
-3. Install dependencies:
+### Các bước chạy dự án
 
-   ```bash
-   npm install
-   ```
-
-## Usage
-
-To start the development server:
-
+1. Clone repository:
+```bash
+git clone https://github.com/ThuanPhuc27/Shelterly.git
+cd Shelterly
+```
+Cài đặt dependencies:
+```bash
+npm install
+```
+Chạy chế độ phát triển:
 ```bash
 npm run dev
 ```
+Mở trình duyệt truy cập: http://localhost:3000
 
-This will launch the application in development mode at `http://localhost:3000`.
-
-To build the application for production:
-
+📂 Cấu trúc thư mục
 ```bash
-npm run build
+Shelterly/
+├── public/          # Tài nguyên tĩnh
+├── src/
+│   ├── assets/      # Hình ảnh, icons
+│   ├── components/  # Các component tái sử dụng
+│   ├── data/        # Dữ liệu sản phẩm
+│   ├── pages/       # Các trang
+│   ├── App.jsx      # Component chính
+│   └── main.jsx     # Điểm khởi đầu
+├── .gitignore
+├── package.json
+├── README.md
+└── vite.config.js
 ```
+🌐 Demo trực tuyến
+Truy cập bản demo: 👉 https://thuanphuc27.github.io/Shelterly/
 
-## Technologies Used
-
-- **React:** A JavaScript library for building user interfaces.
-- **Tailwind CSS:** A utility-first CSS framework for designing responsive web pages.
-- **Vite:** A next-generation frontend tooling to streamline development.
-- **NPM:** Package manager for Node.js packages.
-
+📧 Liên hệ
+Thuan Phuc - thuanlephuc152@gmail.com
+Đường dẫn dự án: https://github.com/ThuanPhuc27/Shelterly
