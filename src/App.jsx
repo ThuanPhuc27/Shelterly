@@ -1,20 +1,20 @@
-import React from 'react'
-import { HeroSection, Navbar,Companies, Achievement,FeedBack,Footer , Backpacks, Contact} from './components'
+// src/App.jsx
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from "./pages/Home";
+import ProductDetail from './pages/ProductDetail';
 
 function App() {
-
   return (
-    <div className="app">
-        <Navbar/>
-        <HeroSection/>
-        <Companies/>
-        <Backpacks/>
-        <Achievement/>
-        <FeedBack/>
-        <Contact />
-        <Footer/>
-    </div>
-  )
+    <Router>
+      
+      <Routes>
+        <Route path="/Shelterly/" element={<Home />} />
+        <Route path="/Shelterly/product/:id" element={<ProductDetail />} />
+        </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

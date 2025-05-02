@@ -84,13 +84,17 @@ const Backpacks = () => {
             {backpacks.map((backpack) => (
               <div key={backpack.id} className='px-3 py-4'>
                 <BackpackCard
+                  id={backpack.id}
                   title={backpack.title}
                   category={backpack.category}
-                  rating={backpack.rating}
+                  rating={backpack.rating.rate}
                   price={backpack.price}
                   linkImg={backpack.linkImg}
                   colors={backpack.colors}
                   isNew={backpack.isNew}
+                  reviews={backpack.rating.count}
+                  description={backpack.description}
+                  shopeeLink={backpack.shopeeLink}
                 />
               </div>
             ))}

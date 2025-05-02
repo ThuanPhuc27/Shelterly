@@ -1,5 +1,5 @@
 import React from 'react';
-import bgImg from '../assets/bg.jpg';
+import bgImg from '../assets/bg.png';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const HeroSection = () => {
@@ -35,7 +35,7 @@ const HeroSection = () => {
 
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-white to-[#e6f4f4] py-20 px-4 md:py-28" id="home">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-white to-[#e6f4f4] py-20 px-4 md:py-28" id="home" >
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <div className="absolute top-20 -left-20 w-64 h-64 rounded-full bg-[#208486]/10 blur-3xl"></div>
@@ -55,7 +55,7 @@ const HeroSection = () => {
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#208486] leading-tight"
               variants={itemVariants}
             >
-              PROTECTION FOR <br />YOUR BACKPACK
+              PROTECTION  FOR <br />YOUR  BACKPACK
             </motion.h1>
             
             <motion.p 
@@ -81,27 +81,25 @@ const HeroSection = () => {
             </motion.div>
           </div>
 
-          {/* Image with enhanced effects */}
-          <motion.div 
+          <motion.div
             className="relative"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <div className="absolute -inset-4 bg-gradient-to-r from-[#208486]/20 to-[#208486]/10 rounded-2xl transform rotate-1 scale-95"></div>
-            <div className="absolute -inset-4 bg-gradient-to-b from-[#208486]/10 to-transparent rounded-2xl transform -rotate-1 scale-95"></div>
-            
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-[1.02] group">
+
               <img
                 src={bgImg}
                 alt="SHELTERLY backpack cover in action"
-                className="w-full h-auto object-cover brightness-95 contrast-105 saturate-110 transform transition-all duration-700 group-hover:scale-105"
+                className="w-full h-auto object-cover transform transition-all duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
-              <div className="absolute inset-0 border-4 border-white/20 rounded-2xl pointer-events-none"></div>
-            </div>
+
+
           </motion.div>
-        </motion.div>
+
+
+          </motion.div>
+
       </div>
     </section>
   );
